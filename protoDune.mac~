@@ -1,0 +1,47 @@
+#
+# Macro file for "TestEm1.cc"
+# 
+# compute the csda range of the primary particle
+# with or without fluctuations
+#
+/control/verbose 2
+/run/verbose 2
+#
+/testem/det/setMat G4_lAr
+/testem/det/setSize 200 cm
+#
+/testem/phys/addPhysics  local
+
+###/testem/phys/addPhysics  empenelope
+###/testem/phys/addPhysics  emlivermore
+#
+/run/initialize
+#
+# prevent any secondary production
+/run/setCut 1 km
+#
+# no step limitation from eLoss
+/process/eLoss/StepFunction 1 100 um
+#
+# eliminate straggling
+/process/eLoss/fluct false
+/process/inactivate msc
+#/process/eLoss/fluct true
+#/process/activate msc
+#
+/testem/gun/setDefault
+/gun/particle proton
+/gun/momentumAmp 1000 MeV
+#
+/analysis/setFileName protoDune
+/analysis/h1/set 1 150 80 100 cm	# range
+#
+/analysis/h1/set 2 100 0  300 none      # nb steps of primary
+/analysis/h1/set 3 200 0   0.2 mm       # step size of primary
+/analysis/h1/set 4 100 50  1000 MeV     # total energy deposit
+/analysis/h1/set 8 250 0   100 cm       # dE/dx vs Track length
+
+#	 
+/run/printProgress 4000
+#
+/run/beamOn 40000
