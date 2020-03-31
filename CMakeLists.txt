@@ -42,7 +42,7 @@ target_link_libraries(TestEm1 ${Geant4_LIBRARIES} ${HBOOK_LIBRARIES})
 set(TestEm1_SCRIPTS
     annihil.mac brems.mac decayinfly.mac erange.mac gammaconversion.mac 
     geantino.mac photoelec.mac photon.mac radioactive.mac range.mac runs.mac TestEm1.in
-    TestEm1.out vis.mac
+    TestEm1.out vis.mac protoDune.mac
   )
 
 foreach(_script ${TestEm1_SCRIPTS})
