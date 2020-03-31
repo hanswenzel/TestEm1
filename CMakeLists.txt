@@ -54,7 +54,9 @@ foreach(_script ${TestEm1_SCRIPTS})
 endforeach()
 
 #----------------------------------------------------------------------------
-# Install the executable to 'bin' directory under CMAKE_INSTALL_PREFIX
+# Install the executable and macrod to 'bin' directory under CMAKE_INSTALL_PREFIX
 #
 install(TARGETS TestEm1 DESTINATION bin)
-
+install(FILES  annihil.mac brems.mac decayinfly.mac erange.mac gammaconversion.mac 
+    geantino.mac photoelec.mac photon.mac radioactive.mac range.mac runs.mac TestEm1.in
+    TestEm1.out vis.mac protoDune.mac DESTINATION bin)
