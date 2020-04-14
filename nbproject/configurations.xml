@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configurationDescriptor version="100">
+  <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
+    <df root="." name="0">
+      <df name="src">
+        <in>ActionInitialization.cc</in>
+        <in>DetectorConstruction.cc</in>
+        <in>DetectorMessenger.cc</in>
+        <in>EnergyDepositHit.cc</in>
+        <in>EnergyDepositSD.cc</in>
+        <in>EventAction.cc</in>
+        <in>HistoManager.cc</in>
+        <in>PhysListEmStandard.cc</in>
+        <in>PhysicsList.cc</in>
+        <in>PhysicsListMessenger.cc</in>
+        <in>PrimaryGeneratorAction.cc</in>
+        <in>PrimaryGeneratorMessenger.cc</in>
+        <in>Run.cc</in>
+        <in>RunAction.cc</in>
+        <in>StackingAction.cc</in>
+        <in>StepMax.cc</in>
+        <in>StepMaxMessenger.cc</in>
+        <in>SteppingAction.cc</in>
+        <in>SteppingVerbose.cc</in>
+        <in>TrackingAction.cc</in>
+      </df>
+      <in>TestEm1.cc</in>
+    </df>
+    <logicalFolder name="ExternalFiles"
+                   displayName="Important Files"
+                   projectFiles="false"
+                   kind="IMPORTANT_FILES_FOLDER">
+      <itemPath>CMakeLists.txt</itemPath>
+      <itemPath>../TestEm1-build/Makefile</itemPath>
+      <itemPath>nbproject/private/launcher.properties</itemPath>
+    </logicalFolder>
+  </logicalFolder>
+  <sourceFolderFilter>^(nbproject)$</sourceFolderFilter>
+  <sourceRootList>
+    <Elem>.</Elem>
+  </sourceRootList>
+  <projectmakefile>../TestEm1-build/Makefile</projectmakefile>
+  <confs>
+    <conf name="Default" type="0">
+      <toolsSet>
+        <compilerSet>default</compilerSet>
+        <dependencyChecking>false</dependencyChecking>
+        <rebuildPropChanged>false</rebuildPropChanged>
+      </toolsSet>
+      <flagsDictionary>
+        <element flagsID="0" commonFlags="-pedantic -std=c++11 -fPIC -std=gnu++11"/>
+      </flagsDictionary>
+      <codeAssistance>
+      </codeAssistance>
+      <makefileType>
+        <makeTool>
+          <buildCommandWorkingDir>../TestEm1-build</buildCommandWorkingDir>
+          <buildCommand>${MAKE} -f Makefile install</buildCommand>
+          <cleanCommand>${MAKE} -f Makefile clean</cleanCommand>
+          <executablePath></executablePath>
+          <ccTool>
+            <incDir>
+              <pElem>../../geant4.10.06.p01_install/include/Geant4</pElem>
+              <pElem>include</pElem>
+              <pElem>/usr/include/x86_64-linux-gnu/qt5</pElem>
+              <pElem>/usr/include/x86_64-linux-gnu/qt5/QtGui</pElem>
+              <pElem>/usr/include/x86_64-linux-gnu/qt5/QtCore</pElem>
+              <pElem>/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++</pElem>
+              <pElem>/usr/include/x86_64-linux-gnu/qt5/QtWidgets</pElem>
+              <pElem>/usr/include/x86_64-linux-gnu/qt5/QtPrintSupport</pElem>
+              <pElem>/usr/include/x86_64-linux-gnu/qt5/QtOpenGL</pElem>
+              <pElem>../TestEm1-build</pElem>
+            </incDir>
+            <preprocessorList>
+              <Elem>G4INTY_USE_QT</Elem>
+              <Elem>G4INTY_USE_XT</Elem>
+              <Elem>G4LIB_BUILD_DLL</Elem>
+              <Elem>G4UI_USE_QT</Elem>
+              <Elem>G4UI_USE_TCSH</Elem>
+              <Elem>G4VIS_USE_OPENGL</Elem>
+              <Elem>G4VIS_USE_OPENGLQT</Elem>
+              <Elem>G4VIS_USE_OPENGLX</Elem>
+              <Elem>QT_CORE_LIB</Elem>
+              <Elem>QT_GUI_LIB</Elem>
+              <Elem>QT_OPENGL_LIB</Elem>
+              <Elem>QT_PRINTSUPPORT_LIB</Elem>
+              <Elem>QT_WIDGETS_LIB</Elem>
+            </preprocessorList>
+          </ccTool>
+        </makeTool>
+        <preBuild>
+          <preBuildCommandWorkingDir>../TestEm1-build</preBuildCommandWorkingDir>
+          <preBuildCommand>${CMAKE} -G "Unix Makefiles" -DCMAKE_BUILD_TYPE=Debug -DCMAKE_C_COMPILER=${IDE_CC} -DCMAKE_CXX_COMPILER=${IDE_CXX} -DCMAKE_C_FLAGS_DEBUG="-g3 -gdwarf-2" -DCMAKE_CXX_FLAGS_DEBUG="-g3 -gdwarf-2" -DCMAKE_EXPORT_COMPILE_COMMANDS=ON  -DWITH_GEANT4_UIVIS=ON -DCMAKE_INSTALL_PREFIX=../TestEm1-install ../TestEm1</preBuildCommand>
+        </preBuild>
+      </makefileType>
+      <item path="TestEm1.cc" ex="false" tool="1" flavor2="8">
+        <ccTool flags="0">
+        </ccTool>
+      </item>
+      <item path="src/ActionInitialization.cc" ex="false" tool="1" flavor2="8">
+        <ccTool flags="0">
+        </ccTool>
+      </item>
+      <item path="src/DetectorConstruction.cc" ex="false" tool="1" flavor2="8">
+        <ccTool flags="0">
+        </ccTool>
+      </item>
+      <item path="src/DetectorMessenger.cc" ex="false" tool="1" flavor2="8">
+        <ccTool flags="0">
+        </ccTool>
+      </item>
+      <item path="src/EnergyDepositHit.cc" ex="false" tool="1" flavor2="8">
+        <ccTool flags="0">
+        </ccTool>
+      </item>
+      <item path="src/EnergyDepositSD.cc" ex="false" tool="1" flavor2="8">
+        <ccTool flags="0">
+        </ccTool>
+      </item>
+      <item path="src/EventAction.cc" ex="false" tool="1" flavor2="8">
+        <ccTool flags="0">
+        </ccTool>
+      </item>
+      <item path="src/HistoManager.cc" ex="false" tool="1" flavor2="8">
+        <ccTool flags="0">
+        </ccTool>
+      </item>
+      <item path="src/PhysListEmStandard.cc" ex="false" tool="1" flavor2="8">
+        <ccTool flags="0">
+        </ccTool>
+      </item>
+      <item path="src/PhysicsList.cc" ex="false" tool="1" flavor2="8">
+        <ccTool flags="0">
+        </ccTool>
+      </item>
+      <item path="src/PhysicsListMessenger.cc" ex="false" tool="1" flavor2="8">
+        <ccTool flags="0">
+        </ccTool>
+      </item>
+      <item path="src/PrimaryGeneratorAction.cc" ex="false" tool="1" flavor2="8">
+        <ccTool flags="0">
+        </ccTool>
+      </item>
+      <item path="src/PrimaryGeneratorMessenger.cc" ex="false" tool="1" flavor2="8">
+        <ccTool flags="0">
+        </ccTool>
+      </item>
+      <item path="src/Run.cc" ex="false" tool="1" flavor2="8">
+        <ccTool flags="0">
+        </ccTool>
+      </item>
+      <item path="src/RunAction.cc" ex="false" tool="1" flavor2="8">
+        <ccTool flags="0">
+        </ccTool>
+      </item>
+      <item path="src/StackingAction.cc" ex="false" tool="1" flavor2="8">
+        <ccTool flags="0">
+        </ccTool>
+      </item>
+      <item path="src/StepMax.cc" ex="false" tool="1" flavor2="8">
+        <ccTool flags="0">
+        </ccTool>
+      </item>
+      <item path="src/StepMaxMessenger.cc" ex="false" tool="1" flavor2="8">
+        <ccTool flags="0">
+        </ccTool>
+      </item>
+      <item path="src/SteppingAction.cc" ex="false" tool="1" flavor2="8">
+        <ccTool flags="0">
+        </ccTool>
+      </item>
+      <item path="src/SteppingVerbose.cc" ex="false" tool="1" flavor2="8">
+        <ccTool flags="0">
+        </ccTool>
+      </item>
+      <item path="src/TrackingAction.cc" ex="false" tool="1" flavor2="8">
+        <ccTool flags="0">
+        </ccTool>
+      </item>
+    </conf>
+  </confs>
+</configurationDescriptor>

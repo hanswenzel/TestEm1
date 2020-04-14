@@ -103,7 +103,7 @@ void TrackingAction::PostUserTrackingAction(const G4Track* aTrack)
     run->AddProjRange(position.x());
     run->AddTransvDev(position.y());
     run->AddTransvDev(position.z());
-    
+    TrackLength=Trleng;
     G4AnalysisManager* analysisManager = G4AnalysisManager::Instance();
     analysisManager->FillH1(1,Trleng);
     analysisManager->FillH1(2,(float)nbSteps);        

@@ -89,11 +89,11 @@ void RunAction::BeginOfRunAction(const G4Run*)
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
-void RunAction::EndOfRunAction(const G4Run*)
+void RunAction::EndOfRunAction(const G4Run* aRun)
 {
   // compute and print statistic 
   if (isMaster) fRun->EndOfRun();
-             
+  std::cout<< "aRun->GetNumberOfEventToBeProcessed():  "<<aRun->GetNumberOfEventToBeProcessed()<<std::endl; 
   //save histograms      
   G4AnalysisManager* analysisManager = G4AnalysisManager::Instance();  
   if ( analysisManager->IsActive() ) {

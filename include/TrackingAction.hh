@@ -32,7 +32,7 @@
 
 #ifndef TrackingAction_h
 #define TrackingAction_h 1
-
+#include "globals.hh"
 #include "G4UserTrackingAction.hh"
 
 class PrimaryGeneratorAction;
@@ -40,18 +40,25 @@ class PrimaryGeneratorAction;
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
 class TrackingAction : public G4UserTrackingAction {
-
-  public:  
+public:
     TrackingAction(PrimaryGeneratorAction*);
-   ~TrackingAction() {};
-   
-    virtual void  PreUserTrackingAction(const G4Track*);
+
+    ~TrackingAction() {
+    };
+
+    virtual void PreUserTrackingAction(const G4Track*);
     virtual void PostUserTrackingAction(const G4Track*);
-    
-  private:
+
+private:
     PrimaryGeneratorAction* fPrimary;
-};
+    G4double TrackLength;
 
+
+public:
+
+G4double GetTrackLength() const {
+    return TrackLength;
+}
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
-
+};
 #endif

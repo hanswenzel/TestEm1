@@ -40,7 +40,8 @@
 /analysis/h1/set 3 200 0   0.2 mm       # step size of primary
 /analysis/h1/set 4 100 50  1000 MeV     # total energy deposit
 /analysis/h1/set 8 250 0   100 cm       # dE/dx vs Track length
-
+/analysis/h1/set 200 250 0   10 MeV       # 
+/analysis/h1/set 150 250 0   10 MeV       # 
 #	 
 /run/printProgress 4000
 #
