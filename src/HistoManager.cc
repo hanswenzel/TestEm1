@@ -45,16 +45,16 @@ void HistoManager::Book() {
     id[3] = "4";
     id[4] = "5";
     id[5] = "6";
-    id[6] = "8";
-    id[7] = "9";
+    id[6] = "7";
+    id[7] = "8";
     title[0] = "total track length of primary particle"; //1
     title[1] = "nb steps of primary particle"; //2
     title[2] = "step size of primary particle"; //3
-    title[3] = "total energy deposit"; //4
+    title[3] = "total energy";
     title[4] = "energy of charged secondaries at creation"; //5
     title[5] = "energy of neutral secondaries at creation"; //6
-    title[6] = "NIEL energy deposit"; //8
-    title[7] = "dE/dx vs tracklength"; //9    
+    //title[6] = "NIEL energy deposit"; //8
+    title[6] = "dE/dx vs tracklength"; //9    
     int beg = 0;
     int end = 5;
     for (G4int k = nonslice; k < kMaxHisto; k++) {
@@ -74,9 +74,11 @@ void HistoManager::Book() {
     // Create all histograms as inactivated 
     // as we have not yet set nbins, vmin, vmax
     for (G4int k = 0; k < kMaxHisto; k++) {
-        G4int ih = analysisManager->CreateH1(id[k], title[k], nbins, vmin, vmax);
-        analysisManager->SetH1Activation(ih, false);
+            G4int ih = analysisManager->CreateH1(id[k], title[k], nbins, vmin, vmax);
+            analysisManager->SetH1Activation(ih, false);
     }
+    G4int ih2 = analysisManager->CreateH2("scatter", "dE/dx vs tracklength", nbins, vmin, vmax, nbins, vmin, vmax);
+           analysisManager->SetH2Activation(ih2, false);
 }
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......

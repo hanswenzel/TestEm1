@@ -40,6 +40,8 @@
 #include "G4UnitsTable.hh"
 #include "TrackingAction.hh"
 #include "EnergyDepositHit.hh"
+#include "G4SystemOfUnits.hh"
+#include "G4PhysicalConstants.hh"
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
 EventAction::EventAction()
@@ -64,25 +66,23 @@ void EventAction::BeginOfEventAction(const G4Event*) {
 
 void EventAction::EndOfEventAction(const G4Event* event) {
     TrackingAction* tra = (TrackingAction*) G4RunManagerKernel::GetRunManagerKernel()->GetTrackingManager()->GetUserTrackingAction();
-    //std::cout << "********* " << tra->GetTrackLength() << std::endl;
-    double tracklength = tra->GetTrackLength() ;
-    //G4TrackingManager* GetTrackingManager()
+    double tracklength = tra->GetTrackLength();
     auto hce = event->GetHCofThisEvent();
     auto hc = hce->GetHC(0);
     double dEdx[200];
-    for(int i=0;i<200;i++){
-        dEdx[i]=0.0;
-    } 
-     for(unsigned int i=0;i<hc->GetSize();i++){ 
-         unsigned int slice =(tracklength-(((EnergyDepositHit*)(hc->GetHit(i)))->GetZpos()))/5;
-         if (slice>199) slice=199;
-         dEdx[slice]=dEdx[slice]+((EnergyDepositHit*)(hc->GetHit(i)))->GetEdep();
-//       std::cout<<"999999999999999999:  "<<   ((EnergyDepositHit*)(hc->GetHit(i)))->GetEdep()<<std::endl;
-     }
-   for(int i=0;i<200;i++){
-        G4AnalysisManager::Instance()->FillH1(8+i,dEdx[i]);
-    } 
-   // std::cout << "********* hc size:  " << hc->GetSize() << std::endl;
+    for (int i = 0; i < 200; i++) {
+        dEdx[i] = 0.0;
+    }
+    for (unsigned int i = 0; i < hc->GetSize(); i++) {
+        unsigned int slice = (tracklength - (((EnergyDepositHit*) (hc->GetHit(i)))->GetZpos()))*0.2;
+        if (slice > 199) slice = 199;
+        dEdx[slice] = dEdx[slice]+((EnergyDepositHit*) (hc->GetHit(i)))->GetEdep();
+    }
+    for (int i = 0; i < 200; i++) {
+        G4AnalysisManager::Instance()->FillH1(8 + i, dEdx[i]);
+        G4AnalysisManager::Instance()->FillH2(1, i * 5. + 2.5, dEdx[i]);
+        
+    }
     G4AnalysisManager::Instance()->FillH1(4, fTotalEnergyDeposit);
     G4AnalysisManager::Instance()->FillH1(7, fNIEL);
 

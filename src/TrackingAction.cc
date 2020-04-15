@@ -40,95 +40,92 @@
 
 #include "G4SystemOfUnits.hh"
 #include "G4UnitsTable.hh"
-
+#include "G4PhysicalConstants.hh"
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
 TrackingAction::TrackingAction(PrimaryGeneratorAction* prim)
-:G4UserTrackingAction(),fPrimary(prim)
-{ }
-
-//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
-
-void TrackingAction::PreUserTrackingAction(const G4Track*)
-{
-/*
-  //debug  
-  const G4DynamicParticle* dynamic = aTrack->GetDynamicParticle();
-  G4double dynamCharge = dynamic->GetCharge();
-  G4int occup          = dynamic->GetTotalOccupancy();
-  G4double   pdgMass   = dynamic->GetParticleDefinition()->GetPDGMass();    
-  G4double invarMass   = dynamic->Get4Momentum().m();  
-  G4double dynamMass   = dynamic->GetMass();
-  G4double dif1 = invarMass - pdgMass;
-  G4double dif2 = dynamMass - pdgMass;
-  
-  G4cout
-    << "\n  Begin of track :" 
-    << "\n    charge= " <<  dynamCharge << "  occupancy= " << occup
-    << "\n   pdgMass= " << G4BestUnit (pdgMass  , "Energy")    
-///    << "\n invarMass= " << G4BestUnit (invarMass, "Energy")
-///    << "   invar-pdg= " << G4BestUnit (dif1     , "Energy")
-    << "\n dynamMass= " << G4BestUnit (dynamMass, "Energy")
-    << "   dynam-pdg= " << G4BestUnit (dif2     , "Energy")
-    << G4endl;          
-*/             
+: G4UserTrackingAction(), fPrimary(prim) {
 }
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
-void TrackingAction::PostUserTrackingAction(const G4Track* aTrack)
-{
-  //increase nb of processed tracks 
-  //count nb of steps of this track
-  G4int   nbSteps = aTrack->GetCurrentStepNumber();
-  G4double Trleng = aTrack->GetTrackLength();
+void TrackingAction::PreUserTrackingAction(const G4Track*) {
+    /*
+      //debug  
+      const G4DynamicParticle* dynamic = aTrack->GetDynamicParticle();
+      G4double dynamCharge = dynamic->GetCharge();
+      G4int occup          = dynamic->GetTotalOccupancy();
+      G4double   pdgMass   = dynamic->GetParticleDefinition()->GetPDGMass();    
+      G4double invarMass   = dynamic->Get4Momentum().m();  
+      G4double dynamMass   = dynamic->GetMass();
+      G4double dif1 = invarMass - pdgMass;
+      G4double dif2 = dynamMass - pdgMass;
   
-  Run* run = static_cast<Run*>(
-             G4RunManager::GetRunManager()->GetNonConstCurrentRun()); 
-    
-  if (aTrack->GetDefinition()->GetPDGCharge() == 0.) {
-    run->CountTraks0(1); 
-    run->CountSteps0(nbSteps);
+      G4cout
+        << "\n  Begin of track :" 
+        << "\n    charge= " <<  dynamCharge << "  occupancy= " << occup
+        << "\n   pdgMass= " << G4BestUnit (pdgMass  , "Energy")    
+    ///    << "\n invarMass= " << G4BestUnit (invarMass, "Energy")
+    ///    << "   invar-pdg= " << G4BestUnit (dif1     , "Energy")
+        << "\n dynamMass= " << G4BestUnit (dynamMass, "Energy")
+        << "   dynam-pdg= " << G4BestUnit (dif2     , "Energy")
+        << G4endl;          
+     */
+}
+
+//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
+
+void TrackingAction::PostUserTrackingAction(const G4Track* aTrack) {
+    //increase nb of processed tracks 
+    //count nb of steps of this track
+    G4int nbSteps = aTrack->GetCurrentStepNumber();
+    G4double Trleng = aTrack->GetTrackLength();
+
+    Run* run = static_cast<Run*> (G4RunManager::GetRunManager()->GetNonConstCurrentRun());
+
+    if (aTrack->GetDefinition()->GetPDGCharge() == 0.) {
+        run->CountTraks0(1);
+        run->CountSteps0(nbSteps);
+
+    } else {
+        run->CountTraks1(1);
+        run->CountSteps1(nbSteps);
+    }
+
+    //true and projected ranges for primary particle
+    if (aTrack->GetTrackID() == 1) {
+        run->AddTrueRange(Trleng);
+        G4ThreeVector vertex = fPrimary->GetParticleGun()->GetParticlePosition();
+        G4ThreeVector position = aTrack->GetPosition() - vertex;
+        run->AddProjRange(position.x());
+        run->AddTransvDev(position.y());
+        run->AddTransvDev(position.z());
+        TrackLength = Trleng;
+        G4AnalysisManager* analysisManager = G4AnalysisManager::Instance();
+        analysisManager->FillH1(1, Trleng);
+        analysisManager->FillH1(2, (float) nbSteps);
+    }
+    /*
+      //debug  
+      const G4DynamicParticle* dynamic = aTrack->GetDynamicParticle();
+      G4double dynamCharge = dynamic->GetCharge();
+      G4int occup          = dynamic->GetTotalOccupancy();
+      G4double   pdgMass   = dynamic->GetParticleDefinition()->GetPDGMass();    
+      G4double invarMass   = dynamic->Get4Momentum().m();  
+      G4double dynamMass   = dynamic->GetMass();
+      G4double dif1 = invarMass - pdgMass;
+      G4double dif2 = dynamMass - pdgMass;
   
-  } else {
-    run->CountTraks1(1); 
-    run->CountSteps1(nbSteps);
-  }
-  
-  //true and projected ranges for primary particle
-  if (aTrack->GetTrackID() == 1) {
-    run->AddTrueRange(Trleng);
-    G4ThreeVector vertex = fPrimary->GetParticleGun()->GetParticlePosition();
-    G4ThreeVector position = aTrack->GetPosition() - vertex;      
-    run->AddProjRange(position.x());
-    run->AddTransvDev(position.y());
-    run->AddTransvDev(position.z());
-    TrackLength=Trleng;
-    G4AnalysisManager* analysisManager = G4AnalysisManager::Instance();
-    analysisManager->FillH1(1,Trleng);
-    analysisManager->FillH1(2,(float)nbSteps);        
-  }
-/*
-  //debug  
-  const G4DynamicParticle* dynamic = aTrack->GetDynamicParticle();
-  G4double dynamCharge = dynamic->GetCharge();
-  G4int occup          = dynamic->GetTotalOccupancy();
-  G4double   pdgMass   = dynamic->GetParticleDefinition()->GetPDGMass();    
-  G4double invarMass   = dynamic->Get4Momentum().m();  
-  G4double dynamMass   = dynamic->GetMass();
-  G4double dif1 = invarMass - pdgMass;
-  G4double dif2 = dynamMass - pdgMass;
-  
-  G4cout
-    << "\n  End of track :"    
-    << "\n    charge= " <<  dynamCharge << "  occupancy= " << occup
-    << "\n   pdgMass= " << G4BestUnit (pdgMass  , "Energy")    
-///    << "\n invarMass= " << G4BestUnit (invarMass, "Energy")
-///    << "   invar-pdg= " << G4BestUnit (dif1     , "Energy")
-    << "\n dynamMass= " << G4BestUnit (dynamMass, "Energy")
-    << "   dynam-pdg= " << G4BestUnit (dif2     , "Energy")
-    << G4endl;          
-*/                       
+      G4cout
+        << "\n  End of track :"    
+        << "\n    charge= " <<  dynamCharge << "  occupancy= " << occup
+        << "\n   pdgMass= " << G4BestUnit (pdgMass  , "Energy")    
+    ///    << "\n invarMass= " << G4BestUnit (invarMass, "Energy")
+    ///    << "   invar-pdg= " << G4BestUnit (dif1     , "Energy")
+        << "\n dynamMass= " << G4BestUnit (dynamMass, "Energy")
+        << "   dynam-pdg= " << G4BestUnit (dif2     , "Energy")
+        << G4endl;          
+     */
 }
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......

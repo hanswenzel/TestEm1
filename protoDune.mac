@@ -32,17 +32,221 @@
 /testem/gun/setDefault
 /gun/particle proton
 /gun/momentumAmp 1000 MeV
+/gun/position 0 0 0 mm
+/gun/direction 0. 0. 1.
 #
+/analysis/h2/setX 1 180 0 90 cm 
+/analysis/h2/setY 1 100 0  20 MeV 
 /analysis/setFileName protoDune
 /analysis/h1/set 1 150 80 100 cm	# range
-#
-/analysis/h1/set 2 100 0  300 none      # nb steps of primary
+/analysis/h1/set 2 100 0  10000 none      # nb steps of primary
 /analysis/h1/set 3 200 0   0.2 mm       # step size of primary
 /analysis/h1/set 4 100 50  1000 MeV     # total energy deposit
-/analysis/h1/set 8 250 0   100 cm       # dE/dx vs Track length
-/analysis/h1/set 200 250 0   10 MeV       # 
-/analysis/h1/set 150 250 0   10 MeV       # 
+/analysis/h1/set 7 250 0   100 cm       # dE/dx vs Track length
+#/analysis/h1/set 6 100 1   7 MeV
+#/analysis/h1/set 7 100 1   7 MeV
+/analysis/h1/set 9 100 8   20 MeV
+/analysis/h1/set 10 100 6  12 MeV
+/analysis/h1/set 11 100 5  10 MeV
+/analysis/h1/set 12 100 5  12 MeV
+/analysis/h1/set 13 100 4   7 MeV
+/analysis/h1/set 14 100 4   7 MeV
+/analysis/h1/set 15 100 3   7 MeV
+/analysis/h1/set 16 100 1   7 MeV
+/analysis/h1/set 17 100 1   7 MeV
+/analysis/h1/set 18 100 1   7 MeV
+/analysis/h1/set 19 100 1   7 MeV
+/analysis/h1/set 20 100 1   7 MeV
+/analysis/h1/set 21 100 1   7 MeV
+/analysis/h1/set 22 100 1   7 MeV
+/analysis/h1/set 23 100 1   7 MeV
+/analysis/h1/set 24 100 1   7 MeV
+/analysis/h1/set 25 100 1   7 MeV
+/analysis/h1/set 26 100 1   7 MeV
+/analysis/h1/set 27 100 1   7 MeV
+/analysis/h1/set 28 100 1   7 MeV
+/analysis/h1/set 29 100 1   7 MeV
+/analysis/h1/set 30 100 1   7 MeV
+/analysis/h1/set 31 100 1   7 MeV
+/analysis/h1/set 32 100 1   7 MeV
+/analysis/h1/set 33 100 1   7 MeV
+/analysis/h1/set 34 100 1   7 MeV
+/analysis/h1/set 35 100 1   7 MeV
+/analysis/h1/set 36 100 1   7 MeV
+/analysis/h1/set 37 100 1   7 MeV
+/analysis/h1/set 38 100 1   7 MeV
+/analysis/h1/set 39 100 1   7 MeV
+/analysis/h1/set 40 100 1   7 MeV
+/analysis/h1/set 41 100 1   7 MeV
+/analysis/h1/set 42 100 1   7 MeV
+/analysis/h1/set 43 100 1   7 MeV
+/analysis/h1/set 44 100 1   7 MeV
+/analysis/h1/set 45 100 1   7 MeV
+/analysis/h1/set 46 100 1   7 MeV
+/analysis/h1/set 47 100 1   7 MeV
+/analysis/h1/set 48 100 1   7 MeV
+/analysis/h1/set 49 100 1   7 MeV
+/analysis/h1/set 50 100 1   7 MeV
+/analysis/h1/set 51 100 1   7 MeV
+/analysis/h1/set 52 100 1   7 MeV
+/analysis/h1/set 53 100 1   7 MeV
+/analysis/h1/set 54 100 1   7 MeV
+/analysis/h1/set 55 100 1   7 MeV
+/analysis/h1/set 56 100 1   7 MeV
+/analysis/h1/set 57 100 1   7 MeV
+/analysis/h1/set 58 100 1   7 MeV
+/analysis/h1/set 59 100 1   7 MeV
+/analysis/h1/set 60 100 1   7 MeV
+/analysis/h1/set 61 100 1   7 MeV
+/analysis/h1/set 62 100 1   7 MeV
+/analysis/h1/set 63 100 1   7 MeV
+/analysis/h1/set 64 100 1   7 MeV
+/analysis/h1/set 65 100 1   7 MeV
+/analysis/h1/set 66 100 1   7 MeV
+/analysis/h1/set 67 100 1   7 MeV
+/analysis/h1/set 68 100 1   7 MeV
+/analysis/h1/set 69 100 1   7 MeV
+/analysis/h1/set 70 100 1   7 MeV
+/analysis/h1/set 71 100 1   7 MeV
+/analysis/h1/set 72 100 1   7 MeV
+/analysis/h1/set 73 100 1   7 MeV
+/analysis/h1/set 74 100 1   7 MeV
+/analysis/h1/set 75 100 1   7 MeV
+/analysis/h1/set 76 100 1   7 MeV
+/analysis/h1/set 77 100 1   7 MeV
+/analysis/h1/set 78 100 1   7 MeV
+/analysis/h1/set 79 100 1   7 MeV
+/analysis/h1/set 80 100 1   7 MeV
+/analysis/h1/set 81 100 1   7 MeV
+/analysis/h1/set 82 100 1   7 MeV
+/analysis/h1/set 83 100 1   7 MeV
+/analysis/h1/set 84 100 1   7 MeV
+/analysis/h1/set 85 100 1   7 MeV
+/analysis/h1/set 86 100 1   7 MeV
+/analysis/h1/set 87 100 1   7 MeV
+/analysis/h1/set 88 100 1   7 MeV
+/analysis/h1/set 89 100 1   7 MeV
+/analysis/h1/set 90 100 1   7 MeV
+/analysis/h1/set 91 100 1   7 MeV
+/analysis/h1/set 92 100 1   7 MeV
+/analysis/h1/set 93 100 1   7 MeV
+/analysis/h1/set 94 100 1   7 MeV
+/analysis/h1/set 95 100 1   7 MeV
+/analysis/h1/set 96 100 1   7 MeV
+/analysis/h1/set 97 100 1   7 MeV
+/analysis/h1/set 98 100 1   7 MeV
+/analysis/h1/set 99 100 1   7 MeV
+/analysis/h1/set 100 100 1   7 MeV
+/analysis/h1/set 101 100 1   7 MeV
+/analysis/h1/set 102 100 1   7 MeV
+/analysis/h1/set 103 100 1   7 MeV
+/analysis/h1/set 104 100 1   7 MeV
+/analysis/h1/set 105 100 1   7 MeV
+/analysis/h1/set 106 100 1   7 MeV
+/analysis/h1/set 107 100 1   7 MeV
+/analysis/h1/set 108 100 1   7 MeV
+/analysis/h1/set 109 100 1   7 MeV
+/analysis/h1/set 110 100 1   7 MeV
+/analysis/h1/set 111 100 1   7 MeV
+/analysis/h1/set 112 100 1   7 MeV
+/analysis/h1/set 113 100 1   7 MeV
+/analysis/h1/set 114 100 1   7 MeV
+/analysis/h1/set 115 100 1   7 MeV
+/analysis/h1/set 116 100 1   7 MeV
+/analysis/h1/set 117 100 1   7 MeV
+/analysis/h1/set 118 100 1   7 MeV
+/analysis/h1/set 119 100 1   7 MeV
+/analysis/h1/set 120 100 1   7 MeV
+/analysis/h1/set 121 100 1   7 MeV
+/analysis/h1/set 122 100 1   7 MeV
+/analysis/h1/set 123 100 1   7 MeV
+/analysis/h1/set 124 100 1   7 MeV
+/analysis/h1/set 125 100 1   7 MeV
+/analysis/h1/set 126 100 1   7 MeV
+/analysis/h1/set 127 100 1   7 MeV
+/analysis/h1/set 128 100 1   7 MeV
+/analysis/h1/set 129 100 1   7 MeV
+/analysis/h1/set 130 100 1   7 MeV
+/analysis/h1/set 131 100 1   7 MeV
+/analysis/h1/set 132 100 1   7 MeV
+/analysis/h1/set 133 100 1   7 MeV
+/analysis/h1/set 134 100 1   7 MeV
+/analysis/h1/set 135 100 1   7 MeV
+/analysis/h1/set 136 100 1   7 MeV
+/analysis/h1/set 137 100 1   7 MeV
+/analysis/h1/set 138 100 1   7 MeV
+/analysis/h1/set 139 100 1   7 MeV
+/analysis/h1/set 140 100 1   7 MeV
+/analysis/h1/set 141 100 1   7 MeV
+/analysis/h1/set 142 100 1   7 MeV
+/analysis/h1/set 143 100 1   7 MeV
+/analysis/h1/set 144 100 1   7 MeV
+/analysis/h1/set 145 100 1   7 MeV
+/analysis/h1/set 146 100 1   7 MeV
+/analysis/h1/set 147 100 1   7 MeV
+/analysis/h1/set 148 100 1   7 MeV
+/analysis/h1/set 149 100 1   7 MeV
+/analysis/h1/set 150 100 1   7 MeV
+/analysis/h1/set 151 100 1   7 MeV
+/analysis/h1/set 152 100 1   7 MeV
+/analysis/h1/set 153 100 1   7 MeV
+/analysis/h1/set 154 100 1   7 MeV
+/analysis/h1/set 155 100 1   7 MeV
+/analysis/h1/set 156 100 1   7 MeV
+/analysis/h1/set 157 100 1   7 MeV
+/analysis/h1/set 158 100 1   7 MeV
+/analysis/h1/set 159 100 1   7 MeV
+/analysis/h1/set 160 100 1   7 MeV
+/analysis/h1/set 161 100 1   7 MeV
+/analysis/h1/set 162 100 1   7 MeV
+/analysis/h1/set 163 100 1   7 MeV
+/analysis/h1/set 164 100 1   7 MeV
+/analysis/h1/set 165 100 1   7 MeV
+/analysis/h1/set 166 100 1   7 MeV
+/analysis/h1/set 167 100 1   7 MeV
+/analysis/h1/set 168 100 1   7 MeV
+/analysis/h1/set 169 100 1   7 MeV
+/analysis/h1/set 170 100 1   7 MeV
+/analysis/h1/set 171 100 1   7 MeV
+/analysis/h1/set 172 100 1   7 MeV
+/analysis/h1/set 173 100 1   7 MeV
+/analysis/h1/set 174 100 1   7 MeV
+/analysis/h1/set 175 100 1   7 MeV
+/analysis/h1/set 176 100 1   7 MeV
+/analysis/h1/set 177 100 1   7 MeV
+/analysis/h1/set 178 100 1   7 MeV
+/analysis/h1/set 179 100 1   7 MeV
+/analysis/h1/set 180 100 1   7 MeV
+/analysis/h1/set 181 100 1   7 MeV
+/analysis/h1/set 182 100 1   7 MeV
+/analysis/h1/set 183 100 1   7 MeV
+/analysis/h1/set 184 100 1   7 MeV
+/analysis/h1/set 185 100 1   7 MeV
+/analysis/h1/set 186 100 1   7 MeV
+/analysis/h1/set 187 100 1   7 MeV
+/analysis/h1/set 188 100 1   7 MeV
+/analysis/h1/set 189 100 1   7 MeV
+/analysis/h1/set 190 100 1   7 MeV
+/analysis/h1/set 191 100 1   7 MeV
+/analysis/h1/set 192 100 1   7 MeV
+/analysis/h1/set 193 100 1   7 MeV
+/analysis/h1/set 194 100 1   7 MeV
+/analysis/h1/set 195 100 1   7 MeV
+/analysis/h1/set 196 100 1   7 MeV
+/analysis/h1/set 197 100 1   7 MeV
+/analysis/h1/set 198 100 1   7 MeV
+/analysis/h1/set 199 100 1   7 MeV
+/analysis/h1/set 200 100 1   7 MeV
+/analysis/h1/set 201 100 1   7 MeV
+/analysis/h1/set 202 100 1   7 MeV
+/analysis/h1/set 203 100 1   7 MeV
+/analysis/h1/set 204 100 1   7 MeV
+/analysis/h1/set 205 100 1   7 MeV
+/analysis/h1/set 206 100 1   7 MeV
+/analysis/h1/set 207 100 1   7 MeV
+
+
 #	 
-/run/printProgress 4000
+/run/printProgress 1000
 #
-/run/beamOn 40000
+/run/beamOn 1000000

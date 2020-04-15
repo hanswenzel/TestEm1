@@ -7,4 +7,33 @@
         <activeConfTypeElem>0</activeConfTypeElem>
         <activeConfIndexElem>0</activeConfIndexElem>
     </data>
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/home/wenzel/tt/TestEm1/src/PhysicsList.cc</file>
+            <file>file:/home/wenzel/tt/TestEm1/include/EnergyDepositHit.hh</file>
+            <file>file:/home/wenzel/tt/TestEm1/src/DetectorConstruction.cc</file>
+            <file>file:/home/wenzel/tt/TestEm1/include/DetectorConstruction.hh</file>
+            <file>file:/home/wenzel/tt/TestEm1/protoDune.mac</file>
+            <file>file:/home/wenzel/tt/TestEm1/TestEm1.cc</file>
+            <file>file:/home/wenzel/tt/TestEm1/src/HistoManager.cc</file>
+            <file>file:/home/wenzel/tt/TestEm1/include/TrackingAction.hh</file>
+            <file>file:/home/wenzel/tt/TestEm1/src/ActionInitialization.cc</file>
+            <file>file:/home/wenzel/tt/TestEm1/include/HistoManager.hh</file>
+            <file>file:/home/wenzel/tt/TestEm1/src/RunAction.cc</file>
+            <file>file:/home/wenzel/tt/TestEm1/brems.mac</file>
+            <file>file:/home/wenzel/tt/TestEm1/include/EventAction.hh</file>
+            <file>file:/home/wenzel/tt/TestEm1/src/SteppingAction.cc</file>
+            <file>file:/home/wenzel/tt/TestEm1/include/StepMax.hh</file>
+            <file>file:/home/wenzel/tt/TestEm1/include/RunAction.hh</file>
+            <file>file:/home/wenzel/tt/TestEm1/ionis.mac</file>
+            <file>file:/home/wenzel/tt/TestEm1/src/TrackingAction.cc</file>
+            <file>file:/home/wenzel/tt/TestEm1/src/EventAction.cc</file>
+            <file>file:/home/wenzel/tt/TestEm1/src/EnergyDepositHit.cc</file>
+            <file>file:/home/wenzel/tt/TestEm1/src/EnergyDepositSD.cc</file>
+            <file>file:/home/wenzel/tt/TestEm1/src/StepMax.cc</file>
+            <file>file:/home/wenzel/tt/TestEm1/include/EnergyDepositSD.hh</file>
+            <file>file:/home/wenzel/tt/TestEm1/src/StackingAction.cc</file>
+        </group>
+    </open-files>
 </project-private>

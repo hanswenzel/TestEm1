@@ -82,7 +82,7 @@ void SteppingAction::UserSteppingAction(const G4Step* aStep) {
     G4double steplen = aStep->GetStepLength();
     if (ID == 1) {
         analysisManager->FillH1(3, steplen);
-        analysisManager->FillH1(8, aStep->GetTrack()->GetTrackLength(), EdepStep);
+        analysisManager->FillH1(7, aStep->GetTrack()->GetTrackLength(), EdepStep);
     }
 
     /*  

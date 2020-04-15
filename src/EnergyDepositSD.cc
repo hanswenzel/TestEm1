@@ -4,7 +4,7 @@
 
 #include "EnergyDepositSD.hh"
 #include "EnergyDepositHit.hh"
-
+// Geant4 includes 
 #include "G4HCofThisEvent.hh"
 #include "G4TouchableHistory.hh"
 #include "G4Track.hh"
@@ -34,8 +34,6 @@ void EnergyDepositSD::Initialize(G4HCofThisEvent* hce) {
         fHCID = G4SDManager::GetSDMpointer()->GetCollectionID(fHitsCollection);
     }
     hce->AddHitsCollection(fHCID, fHitsCollection);
-    //std::cout<<"*************fHCID:"  <<fHCID<<std::endl;
-    
 }
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
@@ -43,7 +41,7 @@ void EnergyDepositSD::Initialize(G4HCofThisEvent* hce) {
 G4bool EnergyDepositSD::ProcessHits(G4Step* aStep, G4TouchableHistory*) {
     auto edep = aStep->GetTotalEnergyDeposit();
     if (edep == 0.) return true;
-    auto hit = new EnergyDepositHit(aStep->GetTotalEnergyDeposit(),
+    auto hit = new EnergyDepositHit(edep,
             aStep->GetPostStepPoint()->GetPosition().getX(),
             aStep->GetPostStepPoint()->GetPosition().getY(),
             aStep->GetPostStepPoint()->GetPosition().getZ(),
